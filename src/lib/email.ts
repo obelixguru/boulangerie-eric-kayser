@@ -114,4 +114,54 @@ export const emailTemplates = {
       </div>
     `,
   },
+  reEngagement: {
+    subject: "Cela fait un moment — retrouvez le meilleur du fournil",
+    previewText: "Revenez découvrir nos pains au levain et viennoiseries signatures, prêts en click & collect.",
+    html: `
+      <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
+        <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Revenez au vrai goût de Paris</h1>
+        <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
+          Cela fait quelque temps que vous n'êtes pas passé nous voir. Nous avons gardé l'essentiel : pains au levain, viennoiseries pur beurre et retrait rapide au cœur du Louvre-Rivoli.
+        </p>
+        <div style="margin: 24px 0; padding: 16px; background: white; border-left: 3px solid #D4A574;">
+          <strong style="color: #2C1810;">Retrait prioritaire</strong><br/>
+          <span style="color: #78716c; font-size: 14px;">Sur votre prochaine commande en click & collect</span>
+        </div>
+        <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/boutique" style="display: inline-block; background: #C05A3C; color: white; padding: 14px 28px; text-decoration: none; font-weight: 600; margin-top: 8px;">
+          Recommander en click & collect →
+        </a>
+        <p style="font-size: 13px; color: #a8a29e; margin-top: 32px;">
+          Eric Kayser — 4 Rue de l'Échelle, 75001 Paris<br/>
+          <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app" style="color: #C05A3C;">maison-kayser.com</a>
+        </p>
+      </div>
+    `,
+  },
+  b2bProspection: {
+    subject: "Une offre petit-déjeuner premium pour votre établissement près du Louvre",
+    previewText: "Une solution fiable et artisanale pour vos petits-déjeuners, accueils clients et besoins quotidiens.",
+    html: `
+      <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
+        <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Une offre B2B pensée pour les établissements exigeants</h1>
+        <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
+          Nous accompagnons les hôtels, bureaux et adresses premium du quartier Louvre avec une offre simple : pains quotidiens, viennoiseries, corbeilles petit-déjeuner et commande fluide.
+        </p>
+        <ul style="font-size: 15px; color: #44403c; line-height: 1.8; padding-left: 20px;">
+          <li><strong>Qualité artisanale</strong> — levain naturel, fait maison chaque matin</li>
+          <li><strong>Régularité</strong> — livraison ou retrait quotidien, sans surprise</li>
+          <li><strong>Format adapté</strong> — corbeilles, plateaux, volumes personnalisés</li>
+          <li><strong>Proximité</strong> — 4 Rue de l'Échelle, à pas du Louvre</li>
+        </ul>
+        <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/contact?type=b2b" style="display: inline-block; background: #C05A3C; color: white; padding: 14px 28px; text-decoration: none; font-weight: 600; margin-top: 16px;">
+          Recevoir une proposition B2B →
+        </a>
+        <p style="font-size: 13px; color: #a8a29e; margin-top: 32px;">
+          Eric Kayser — 4 Rue de l'Échelle, 75001 Paris<br/>
+          <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app" style="color: #C05A3C;">maison-kayser.com</a>
+        </p>
+      </div>
+    `,
+  },
 };
