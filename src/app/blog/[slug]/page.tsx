@@ -48,9 +48,14 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const allPosts = getAllPosts();
-  const related = allPosts
-    .filter((p) => p.slug !== slug)
-    .slice(0, 2);
+  // Prioritize same-category articles, then fill with recent posts
+  const sameCategory = allPosts.filter(
+    (p) => p.slug !== slug && p.category === post.category
+  );
+  const otherPosts = allPosts.filter(
+    (p) => p.slug !== slug && p.category !== post.category
+  );
+  const related = [...sameCategory, ...otherPosts].slice(0, 2);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
