@@ -120,7 +120,7 @@ export default function Home() {
                 href="/boutique"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#C05A3C] px-6 py-3 text-white font-medium hover:bg-[#A84830] transition-colors min-h-[48px]"
               >
-                Commander (Click &amp; Collect)
+                Retrait au Louvre-Rivoli · Prêt en 15 min
                 <ArrowRight className="size-4" />
               </Link>
               <Link
@@ -199,6 +199,54 @@ export default function Home() {
                       </Link>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="bg-stone-50 py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <h2 className="font-serif text-3xl text-center">
+              Ce que nos clients disent
+            </h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {[
+                {
+                  name: "Marie L.",
+                  text: "Le meilleur pain au levain de Paris. La croûte craque sous les doigts, la mie est parfumée. On ne va plus ailleurs.",
+                  stars: 5,
+                },
+                {
+                  name: "Thomas R.",
+                  text: "Le Click & Collect est un game changer. Je commande le matin, je récupère en sortant du métro Palais-Royal. Toujours frais.",
+                  stars: 5,
+                },
+                {
+                  name: "Sophie D.",
+                  text: "Le coffret artisan est le cadeau parfait. Magnifique présentation, produits exceptionnels. Mes amis étaient ravis.",
+                  stars: 5,
+                },
+              ].map((t) => (
+                <div
+                  key={t.name}
+                  className="rounded-2xl bg-white p-6 shadow-sm"
+                >
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: t.stars }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="size-4 fill-amber-400 text-amber-400"
+                      />
+                    ))}
+                  </div>
+                  <p className="mt-3 text-sm text-stone-600 leading-relaxed">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                  <p className="mt-3 text-sm font-medium text-stone-900">
+                    {t.name}
+                  </p>
                 </div>
               ))}
             </div>
