@@ -210,7 +210,7 @@ export default function Home() {
                         href="/boutique"
                         className="rounded-full bg-stone-900 text-white px-4 py-2 text-sm hover:bg-stone-800 transition-colors min-h-[44px] flex items-center"
                       >
-                        Ajouter
+                        Commander
                       </Link>
                     </div>
                   </div>
@@ -303,6 +303,40 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Internal silo links */}
+        <section className="py-12 border-t border-stone-200">
+          <div className="mx-auto max-w-6xl px-4 grid gap-6 sm:grid-cols-2">
+            <Link
+              href="/blog"
+              className="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-stone-100"
+            >
+              <h3 className="font-serif text-lg group-hover:text-[#C05A3C] transition-colors">
+                Le Journal du Boulanger
+              </h3>
+              <p className="mt-2 text-sm text-stone-500">
+                Recettes, secrets du levain naturel et coulisses du fournil.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C]">
+                Lire nos articles <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
+            <Link
+              href="/contact"
+              className="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-stone-100"
+            >
+              <h3 className="font-serif text-lg group-hover:text-[#C05A3C] transition-colors">
+                Commande sur mesure
+              </h3>
+              <p className="mt-2 text-sm text-stone-500">
+                Événements, mariages, commandes B2B — contactez notre équipe.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C]">
+                Nous contacter <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
           </div>
         </section>
 
