@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { PageViewTracker } from "@/components/page-view-tracker";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,6 +66,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body className="min-h-dvh flex flex-col font-sans antialiased bg-[#FAF9F6] text-[#1A1A1A]">
+        <PageViewTracker />
         {children}
       </body>
     </html>
