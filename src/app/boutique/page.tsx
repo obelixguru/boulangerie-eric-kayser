@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Boutique",
   description:
     "Commandez en ligne nos pains au levain, viennoiseries pur beurre et coffrets artisanaux. Click & Collect au 226 Rue de Rivoli, Paris 1er.",
+  openGraph: {
+    title: "Boutique — Eric Kayser Louvre-Rivoli",
+    description:
+      "Pains au levain, viennoiseries pur beurre, coffrets artisanaux. Click & Collect Paris 1er.",
+  },
+  alternates: { canonical: "/boutique" },
 };
 
 type Product = {

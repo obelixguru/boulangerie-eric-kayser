@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Journal — Le Blog de la Boulangerie",
   description:
     "Recettes, astuces boulangères et coulisses du fournil. Le journal d'Eric Kayser Louvre-Rivoli.",
+  openGraph: {
+    title: "Le Journal du Boulanger — Eric Kayser Louvre-Rivoli",
+    description:
+      "Recettes, astuces boulangères et coulisses du fournil. Découvrez notre expertise artisanale.",
+  },
+  alternates: { canonical: "/blog" },
 };
 
 const ARTICLES = [

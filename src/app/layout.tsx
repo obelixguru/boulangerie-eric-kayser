@@ -19,7 +19,35 @@ export const metadata: Metadata = {
   },
   description:
     "Pains au levain naturel et viennoiseries pur beurre. Commandez en ligne, retirez au Louvre-Rivoli. Boulangerie artisanale premium Paris 1er.",
-  metadataBase: new URL("https://boulangerie-eric-kayser-louvre-rivo.vercel.app"),
+  metadataBase: new URL(
+    "https://boulangerie-eric-kayser-louvre-rivo.vercel.app",
+  ),
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Eric Kayser Louvre-Rivoli",
+    title: "Eric Kayser Louvre-Rivoli | Boulangerie Artisanale Paris",
+    description:
+      "Pains au levain naturel et viennoiseries pur beurre. Commandez en ligne, retirez au Louvre-Rivoli.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Boulangerie Eric Kayser Louvre-Rivoli — Pains artisanaux premium",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eric Kayser Louvre-Rivoli | Boulangerie Artisanale Paris",
+    description:
+      "Pains au levain naturel et viennoiseries pur beurre. Click & Collect au Louvre-Rivoli.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://boulangerie-eric-kayser-louvre-rivo.vercel.app",
+  },
 };
 
 export default function RootLayout({

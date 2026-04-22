@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Contact — Nous Trouver",
   description:
     "Contactez la boulangerie Eric Kayser Louvre-Rivoli. 226 Rue de Rivoli, Paris 1er. Horaires, téléphone, formulaire de contact et FAQ.",
+  openGraph: {
+    title: "Contact — Eric Kayser Louvre-Rivoli",
+    description:
+      "Trouvez notre boulangerie au 226 Rue de Rivoli, Paris 1er. Horaires, contact et FAQ.",
+  },
+  alternates: { canonical: "/contact" },
 };
 
 const FAQ = [

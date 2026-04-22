@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Notre Histoire",
   description:
     "Depuis 1996, Eric Kayser perpétue l'art du levain naturel. Découvrez notre savoir-faire artisanal au cœur du Louvre-Rivoli, Paris 1er.",
+  openGraph: {
+    title: "Notre Histoire — Eric Kayser Louvre-Rivoli",
+    description:
+      "Depuis 1996, l'art du levain naturel au cœur du Louvre-Rivoli. Savoir-faire artisanal parisien.",
+  },
+  alternates: { canonical: "/about" },
 };
 
 const VALUES = [
