@@ -39,12 +39,12 @@ export const emailTemplates = {
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
         <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
-        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Votre prochaine pause gourmande vous attend au Louvre</h1>
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Bienvenue chez Eric Kayser Louvre Rivoli</h1>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          Bienvenue dans la communauté Eric Kayser Louvre-Rivoli. Pains au levain, viennoiseries signatures, créations pâtissières — tout est fait maison, chaque matin, au 4 Rue de l'Échelle.
+          Pains au levain, viennoiseries signatures et retrait rapide au cœur de Paris. Découvrez les essentiels de la maison et commandez en quelques clics.
         </p>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          Commandez en ligne et retirez en boutique sans attente grâce au Click & Collect.
+          Tout est fait maison, chaque matin, au 4 Rue de l'Échelle. Commandez en ligne et retirez sans attente grâce au Click & Collect.
         </p>
         <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/boutique" style="display: inline-block; background: #C05A3C; color: white; padding: 14px 28px; text-decoration: none; font-weight: 600; margin-top: 16px;">
           Découvrir nos best-sellers →
@@ -62,9 +62,9 @@ export const emailTemplates = {
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
         <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
-        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Par quoi commencer chez Eric Kayser ?</h1>
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Commencez par les incontournables</h1>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          Nos clients du quartier Louvre-Rivoli reviennent d'abord pour ces 3 essentiels :
+          Baguette croustillante, croissant pur beurre, pains signatures : voici les produits que nos clients choisissent en premier pour retrouver le vrai goût de Paris.
         </p>
         <div style="margin: 24px 0; padding: 16px; background: white; border-left: 3px solid #C05A3C;">
           <strong style="color: #2C1810;">1. Baguette Tradition au Levain</strong> — 1,50 €<br/>
@@ -88,16 +88,17 @@ export const emailTemplates = {
     `,
   },
   subscription: {
-    subject: "Et si votre pain vous attendait déjà chaque semaine ?",
-    previewText: "La routine la plus simple pour ne jamais manquer de bon pain artisanal.",
+    subject: "Votre pain artisanal, prêt chaque semaine",
+    previewText: "Gagnez du temps sans renoncer à la qualité. Abonnement pain au levain Eric Kayser.",
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
         <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
-        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Gagnez du temps avec notre abonnement pain</h1>
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Votre pain artisanal, prêt chaque semaine</h1>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          Imaginez : chaque matin, votre pain au levain vous attend en boutique. Plus de file d'attente, plus d'oubli. Juste le plaisir d'un pain frais garanti.
+          Gagnez du temps sans renoncer à la qualité. Notre formule d'abonnement vous permet de retrouver vos pains favoris au rythme qui vous convient.
         </p>
-        <div style="margin: 24px 0; padding: 20px; background: #2C1810; color: #FAF8F5;">
+        <div style="margin: 24px 0; padding: 20px; background: #2C1810; color: #FAF8F5; position: relative;">
+          <span style="position: absolute; top: -12px; right: 16px; background: #D4A574; color: #2C1810; font-size: 11px; font-weight: 700; padding: 4px 12px; text-transform: uppercase; letter-spacing: 0.5px;">Le plus populaire</span>
           <strong style="font-size: 18px;">Abonnement Hebdomadaire</strong><br/>
           <span style="font-size: 14px; opacity: 0.8;">1 baguette tradition + 1 pain spécial au choix</span><br/>
           <strong style="font-size: 24px; color: #D4A574; margin-top: 8px; display: inline-block;">9,90 €/semaine</strong><br/>
