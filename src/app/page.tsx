@@ -31,9 +31,69 @@ const BEST_SELLERS = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Bakery", "LocalBusiness"],
+  name: "Eric Kayser - Louvre Rivoli",
+  description:
+    "Boulangerie artisanale premium. Pains au levain naturel, viennoiseries pur beurre et coffrets cadeaux. Click & Collect au Louvre-Rivoli.",
+  url: "https://boulangerie-eric-kayser-louvre-rivo.vercel.app",
+  telephone: "+33-1-42-97-59-29",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "226 Rue de Rivoli",
+    addressLocality: "Paris",
+    postalCode: "75001",
+    addressRegion: "Ile-de-France",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.8606,
+    longitude: 2.3376,
+  },
+  image:
+    "https://images.unsplash.com/photo-1761594606868-1c577b10f69e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwzfHxhcnRpc2FuJTIwYnJlYWQlMjBiYWtlcnklMjBwYXJpc3xlbnwwfDB8fHwxNzc2ODg5MjM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  priceRange: "$$",
+  servesCuisine: ["Boulangerie", "Viennoiserie", "Pâtisserie"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "07:00",
+      closes: "20:30",
+    },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.5",
+    reviewCount: "282",
+    bestRating: "5",
+  },
+  sameAs: [
+    "https://www.tripadvisor.fr/Restaurant_Review-g187147-d2171022-Reviews-Eric_Kayser-Paris_Ile_de_France.html",
+  ],
+  hasMenu: "https://boulangerie-eric-kayser-louvre-rivo.vercel.app/boutique",
+  acceptsReservations: false,
+  paymentAccepted: "Cash, Credit Card",
+  currenciesAccepted: "EUR",
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="flex-1">
         {/* Hero */}

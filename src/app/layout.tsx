@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     "Pains au levain naturel et viennoiseries pur beurre. Commandez en ligne, retirez au Louvre-Rivoli. Boulangerie artisanale premium Paris 1er.",
-  metadataBase: new URL("https://eric-kayser-louvre.vercel.app"),
+  metadataBase: new URL("https://boulangerie-eric-kayser-louvre-rivo.vercel.app"),
 };
 
 export default function RootLayout({
