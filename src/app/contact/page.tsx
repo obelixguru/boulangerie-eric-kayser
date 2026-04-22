@@ -19,16 +19,16 @@ const FAQ = [
     a: "Oui ! Commandez en ligne sur notre boutique et retirez vos produits frais en magasin sous 30 minutes.",
   },
   {
-    q: "Quels allergenes sont presents dans vos produits ?",
-    a: "Nos produits contiennent du gluten (ble), du lait, des oeufs et des fruits a coque. La liste complete des allergenes est disponible en boutique et sur chaque fiche produit.",
+    q: "Quels allergènes sont présents dans vos produits ?",
+    a: "Nos produits contiennent du gluten (blé), du lait, des œufs et des fruits à coque. La liste complète des allergènes est disponible en boutique et sur chaque fiche produit.",
   },
   {
-    q: "Livrez-vous a domicile ?",
-    a: "Pour le moment, nous proposons uniquement le retrait en boutique (Click & Collect). La livraison locale est en cours de developpement.",
+    q: "Livrez-vous à domicile ?",
+    a: "Pour le moment, nous proposons uniquement le retrait en boutique (Click & Collect). La livraison locale est en cours de développement.",
   },
   {
-    q: "Faites-vous des commandes pour evenements ou entreprises ?",
-    a: "Absolument ! Contactez-nous via le formulaire ci-dessous ou par telephone pour les commandes professionnelles, mariages ou evenements.",
+    q: "Faites-vous des commandes pour événements ou entreprises ?",
+    a: "Absolument ! Contactez-nous via le formulaire ci-dessous ou par téléphone pour les commandes professionnelles, mariages ou événements.",
   },
 ];
 
@@ -41,8 +41,8 @@ export default function ContactPage() {
           <div className="mx-auto max-w-6xl px-4">
             <h1 className="font-serif text-3xl sm:text-4xl">Nous Contacter</h1>
             <p className="mt-2 text-stone-500 max-w-lg">
-              Une question, une commande speciale ou un partenariat ? Nous sommes
-              a votre ecoute.
+              Une question, une commande spéciale ou un partenariat ? Nous sommes
+              à votre écoute.
             </p>
           </div>
         </section>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <Phone className="size-5 mt-0.5 shrink-0 text-[#C05A3C]" />
                   <div>
-                    <p className="font-medium">Telephone</p>
+                    <p className="font-medium">Téléphone</p>
                     <p className="text-sm text-stone-500">01 42 97 59 29</p>
                   </div>
                 </div>
@@ -101,9 +101,9 @@ export default function ContactPage() {
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-1.5">Sujet</label>
                   <select id="subject" name="subject" className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#C05A3C] focus:border-transparent min-h-[48px]">
-                    <option>Question generale</option>
+                    <option>Question générale</option>
                     <option>Commande Click &amp; Collect</option>
-                    <option>Commande pro / evenement</option>
+                    <option>Commande pro / événement</option>
                     <option>Partenariat</option>
                     <option>Autre</option>
                   </select>
@@ -119,7 +119,7 @@ export default function ContactPage() {
         </section>
         <section className="bg-stone-50 py-16">
           <div className="mx-auto max-w-3xl px-4">
-            <h2 className="font-serif text-3xl text-center">Questions Frequentes</h2>
+            <h2 className="font-serif text-3xl text-center">Questions Fréquentes</h2>
             <div className="mt-10 space-y-4">
               {FAQ.map((item) => (
                 <details key={item.q} className="group rounded-xl bg-white border border-stone-200 overflow-hidden">
