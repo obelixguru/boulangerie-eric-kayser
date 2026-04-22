@@ -1,8 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Star, Clock, MapPin, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Eric Kayser Louvre-Rivoli | Boulangerie Artisanale Paris 1er",
+  description:
+    "Pains au levain naturel et viennoiseries pur beurre. Commandez en ligne, retirez au Louvre-Rivoli. Boulangerie artisanale premium Paris 1er.",
+  openGraph: {
+    title: "Eric Kayser Louvre-Rivoli | Boulangerie Artisanale Paris",
+    description:
+      "Le vrai goût de Paris, sans l'attente. Pains au levain, viennoiseries pur beurre. Click & Collect au Louvre-Rivoli.",
+  },
+  alternates: { canonical: "/" },
+};
 
 const BEST_SELLERS = [
   {
