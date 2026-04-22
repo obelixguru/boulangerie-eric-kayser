@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +43,12 @@ const TIMELINE = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", href: "/" },
+          { name: "Notre Histoire", href: "/about" },
+        ]}
+      />
       <Header />
       <main className="flex-1">
         {/* Hero */}

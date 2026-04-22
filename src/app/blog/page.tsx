@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -56,6 +57,12 @@ const ARTICLES = [
 export default function BlogPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", href: "/" },
+          { name: "Journal", href: "/blog" },
+        ]}
+      />
       <Header />
       <main className="flex-1">
         {/* Hero */}

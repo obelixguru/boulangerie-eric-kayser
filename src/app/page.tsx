@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Star, Clock, MapPin, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -103,6 +104,7 @@ const jsonLd = {
 export default function Home() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Accueil", href: "/" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

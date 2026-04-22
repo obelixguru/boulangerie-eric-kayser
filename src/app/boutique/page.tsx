@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BreadcrumbJsonLd, ProductListJsonLd } from "@/components/json-ld";
 import { ShoppingBag } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -162,6 +163,21 @@ function ProductCard({ product }: { product: Product }) {
 export default function BoutiquePage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", href: "/" },
+          { name: "Boutique", href: "/boutique" },
+        ]}
+      />
+      <ProductListJsonLd
+        products={PRODUCTS.map((p) => ({
+          name: p.name,
+          description: p.desc,
+          price: p.price,
+          image: p.image,
+          category: p.category,
+        }))}
+      />
       <Header />
       <main className="flex-1">
         {/* Hero banner */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BreadcrumbJsonLd, FaqPageJsonLd } from "@/components/json-ld";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +42,18 @@ const FAQ = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
+      <FaqPageJsonLd
+        faqs={FAQ.map((item) => ({
+          question: item.q,
+          answer: item.a,
+        }))}
+      />
       <Header />
       <main className="flex-1">
         <section className="bg-stone-100 py-12">
