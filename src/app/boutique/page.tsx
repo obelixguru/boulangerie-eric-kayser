@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BreadcrumbJsonLd, ProductListJsonLd } from "@/components/json-ld";
-import { ShoppingBag } from "lucide-react";
+import Link from "next/link";
+import { ShoppingBag, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Boutique",
@@ -184,7 +185,7 @@ export default function BoutiquePage() {
         <section className="bg-stone-100 py-12">
           <div className="mx-auto max-w-6xl px-4">
             <h1 className="font-serif text-3xl sm:text-4xl">
-              Notre Boutique
+              Pains Artisanaux &amp; Viennoiseries — Commande en Ligne
             </h1>
             <p className="mt-2 text-stone-500 max-w-lg">
               Pains au levain, viennoiseries pur beurre et coffrets artisanaux.
@@ -220,6 +221,40 @@ export default function BoutiquePage() {
               <span className="size-2 rounded-full bg-green-500" />
               Retrait disponible aujourd&apos;hui
             </div>
+          </div>
+        </section>
+
+        {/* Internal links silo */}
+        <section className="py-12">
+          <div className="mx-auto max-w-6xl px-4 grid gap-6 sm:grid-cols-2">
+            <Link
+              href="/about"
+              className="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-stone-100"
+            >
+              <h3 className="font-serif text-lg group-hover:text-[#C05A3C] transition-colors">
+                Notre savoir-faire artisanal
+              </h3>
+              <p className="mt-2 text-sm text-stone-500">
+                Levain naturel depuis 1996, fermentation lente 48h, farines françaises sans additifs.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C]">
+                Découvrir notre histoire <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
+            <Link
+              href="/blog"
+              className="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-stone-100"
+            >
+              <h3 className="font-serif text-lg group-hover:text-[#C05A3C] transition-colors">
+                Conseils du boulanger
+              </h3>
+              <p className="mt-2 text-sm text-stone-500">
+                Quel pain choisir pour un plateau de fromages ? Comment conserver votre levain ? Nos astuces.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C]">
+                Lire le journal <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
           </div>
         </section>
       </main>

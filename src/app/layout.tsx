@@ -57,6 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      </head>
       <body className="min-h-dvh flex flex-col font-sans antialiased bg-[#FAF9F6] text-[#1A1A1A]">
         {children}
       </body>

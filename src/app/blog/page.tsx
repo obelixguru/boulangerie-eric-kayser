@@ -123,6 +123,23 @@ export default function BlogPage() {
           </div>
         </section>
 
+        {/* Internal link silo */}
+        <section className="py-12 bg-stone-50">
+          <div className="mx-auto max-w-6xl px-4 text-center">
+            <h2 className="font-serif text-2xl">Goûtez ce que vous lisez</h2>
+            <p className="mt-2 text-stone-500 max-w-md mx-auto">
+              Nos pains au levain, viennoiseries pur beurre et coffrets artisanaux sont disponibles en Click &amp; Collect.
+            </p>
+            <Link
+              href="/boutique"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#C05A3C] px-8 py-3 text-white font-medium hover:bg-[#A84830] transition-colors min-h-[48px]"
+            >
+              Voir la Boutique
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </section>
+
         {/* Newsletter CTA */}
         <section className="bg-stone-900 py-16 text-center">
           <div className="mx-auto max-w-6xl px-4">

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BreadcrumbJsonLd, FaqPageJsonLd } from "@/components/json-ld";
-import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Clock, Phone, Mail, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact — Nous Trouver",
@@ -150,6 +151,21 @@ export default function ContactPage() {
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+        {/* Internal link silo */}
+        <section className="py-12">
+          <div className="mx-auto max-w-6xl px-4 text-center">
+            <p className="text-stone-500">
+              Envie de commander ? Découvrez nos pains au levain, viennoiseries et coffrets artisanaux.
+            </p>
+            <Link
+              href="/boutique"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#C05A3C] px-8 py-3 text-white font-medium hover:bg-[#A84830] transition-colors min-h-[48px]"
+            >
+              Commander en ligne
+              <ArrowRight className="size-4" />
+            </Link>
           </div>
         </section>
       </main>

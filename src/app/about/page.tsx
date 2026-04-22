@@ -144,6 +144,40 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Internal links silo */}
+        <section className="py-16">
+          <div className="mx-auto max-w-6xl px-4 grid gap-6 sm:grid-cols-2">
+            <Link
+              href="/blog"
+              className="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-serif text-lg group-hover:text-[#C05A3C] transition-colors">
+                Le Journal du Boulanger
+              </h3>
+              <p className="mt-2 text-sm text-stone-500">
+                Recettes, secrets de fabrication et coulisses du fournil. Découvrez notre expertise artisanale.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C]">
+                Lire le journal <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
+            <Link
+              href="/contact"
+              className="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-serif text-lg group-hover:text-[#C05A3C] transition-colors">
+                Nous rendre visite
+              </h3>
+              <p className="mt-2 text-sm text-stone-500">
+                226 Rue de Rivoli, Paris 1er. Ouvert 7j/7. Commandes pro et événements sur demande.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C]">
+                Nous contacter <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-stone-900 py-16 text-center">
           <div className="mx-auto max-w-6xl px-4">
