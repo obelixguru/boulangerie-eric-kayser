@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ShoppingBag } from "lucide-react";
@@ -28,8 +29,15 @@ export function Header() {
         </button>
 
         {/* Logo */}
-        <Link href="/" className="font-serif text-xl tracking-wide uppercase">
-          Eric Kayser
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/logo.svg"
+            alt="Maison Kayser"
+            width={120}
+            height={40}
+            className="h-8 w-auto dark:invert"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

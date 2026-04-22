@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, Phone } from "lucide-react";
 
@@ -7,9 +8,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 grid gap-8 sm:grid-cols-3">
         {/* Brand */}
         <div>
-          <p className="font-serif text-lg text-white uppercase tracking-wide">
-            Eric Kayser
-          </p>
+          <Image
+            src="/logo.svg"
+            alt="Maison Kayser"
+            width={120}
+            height={40}
+            className="h-8 w-auto invert"
+          />
           <p className="mt-2 text-sm leading-relaxed">
             Boulangerie artisanale de tradition depuis 1996. Pains au levain
             naturel et viennoiseries pur beurre.
