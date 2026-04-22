@@ -3,43 +3,47 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Journal",
+  title: "Journal — Le Blog de la Boulangerie",
   description:
-    "Conseils boulangerie, recettes au levain et coulisses du fournil. Le journal d'Eric Kayser Louvre-Rivoli.",
+    "Recettes, astuces boulangères et coulisses du fournil. Le journal d'Eric Kayser Louvre-Rivoli.",
 };
 
-const PLACEHOLDER_POSTS = [
+const ARTICLES = [
   {
     slug: "secret-levain-naturel",
-    title: "Le secret du levain naturel",
+    title: "Le secret du levain naturel : pourquoi il change tout",
     excerpt:
-      "Pourquoi le levain donne-t-il un goût si particulier au pain ? Découvrez la science derrière notre fermentation lente de 48 heures.",
-    image:
-      "https://images.unsplash.com/photo-1571157577110-493b325fdd3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwyfHxjcm9pc3NhbnQlMjBwYXN0cnl8ZW58MHwxfHx8MTc3Njg4OTIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "Fermentation lente, saveurs profondes, meilleure digestibilité. Découvrez comment notre levain liquide transforme la farine en pain d'exception.",
     date: "18 avril 2026",
     category: "Savoir-faire",
+    image:
+      "https://images.unsplash.com/photo-1571157577110-493b325fdd3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwyfHxjcm9pc3NhbnQlMjBwYXN0cnl8ZW58MHwxfHx8MTc3Njg4OTIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+    readTime: "5 min",
   },
   {
-    slug: "guide-croissant-parfait",
-    title: "Guide : le croissant parfait",
+    slug: "guide-viennoiseries-paris",
+    title: "Guide des viennoiseries : croissant, pain au chocolat et brioche",
     excerpt:
-      "Feuilletage, tourage, beurre AOP — les étapes clés pour reconnaître un vrai croissant artisanal.",
+      "Beurre AOP, feuilletage à 27 tours, cuisson dorée. Les secrets d'une viennoiserie pur beurre réussie, expliqués par notre chef.",
+    date: "15 avril 2026",
+    category: "Recettes",
     image:
       "https://images.unsplash.com/photo-1773027270919-8714e0af1172?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwzfHxjcm9pc3NhbnQlMjBwYXN0cnl8ZW58MHwxfHx8MTc3Njg4OTIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
-    date: "12 avril 2026",
-    category: "Recettes",
+    readTime: "4 min",
   },
   {
-    slug: "boulangerie-louvre-histoire",
-    title: "Du Louvre à votre table",
+    slug: "boulangerie-louvre-rivoli-histoire",
+    title: "Notre boulangerie au Louvre-Rivoli : 8 ans d'histoire",
     excerpt:
-      "L'histoire de notre boutique au 226 Rue de Rivoli : pourquoi nous avons choisi le coeur de Paris.",
+      "De l'ouverture en 2018 au lancement du Click & Collect, retour sur l'aventure Eric Kayser au cœur de Paris.",
+    date: "10 avril 2026",
+    category: "Coulisses",
     image:
-      "https://images.unsplash.com/photo-1545253089-3ec09a4d3b7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHw1fHxhcnRpc2FuJTIwYnJlYWQlMjBiYWtlcnklMjBwYXJpc3xlbnwwfDB8fHwxNzc2ODg5MjM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    date: "5 avril 2026",
-    category: "Notre Histoire",
+      "https://images.unsplash.com/photo-1775326824244-b76f510665db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwYnJlYWQlMjBiYWtlcnklMjBwYXJpc3xlbnwwfDB8fHwxNzc2ODg5MjM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    readTime: "6 min",
   },
 ];
 
@@ -48,53 +52,57 @@ export default function BlogPage() {
     <>
       <Header />
       <main className="flex-1">
-        {/* Header */}
+        {/* Hero */}
         <section className="bg-stone-100 py-12">
           <div className="mx-auto max-w-6xl px-4">
-            <h1 className="font-serif text-3xl sm:text-4xl">
-              Le Journal
-            </h1>
+            <h1 className="font-serif text-3xl sm:text-4xl">Le Journal</h1>
             <p className="mt-2 text-stone-500 max-w-lg">
-              Coulisses du fournil, conseils de conservation et recettes au
-              levain. Tout ce qu&apos;il faut savoir sur le pain artisanal.
+              Recettes, coulisses du fournil et savoir-faire boulanger. Le blog
+              d&apos;Eric Kayser Louvre-Rivoli.
             </p>
           </div>
         </section>
 
-        {/* Posts grid */}
+        {/* Articles grid */}
         <section className="py-12">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {PLACEHOLDER_POSTS.map((post) => (
+            <div className="grid gap-8 md:grid-cols-3">
+              {ARTICLES.map((article) => (
                 <article
-                  key={post.slug}
+                  key={article.slug}
                   className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="relative aspect-[16/10]">
                     <Image
-                      src={post.image}
-                      alt={post.title}
+                      src={article.image}
+                      alt={article.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      sizes="(min-width: 768px) 33vw, 100vw"
                     />
                     <span className="absolute top-3 left-3 bg-white/90 text-stone-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                      {post.category}
+                      {article.category}
                     </span>
                   </div>
                   <div className="p-5">
-                    <time className="text-xs text-stone-400">{post.date}</time>
-                    <h2 className="mt-2 font-serif text-lg leading-snug">
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="hover:text-[#C05A3C] transition-colors"
-                      >
-                        {post.title}
-                      </Link>
+                    <div className="flex items-center gap-2 text-xs text-stone-400">
+                      <time>{article.date}</time>
+                      <span aria-hidden="true">&middot;</span>
+                      <span>{article.readTime} de lecture</span>
+                    </div>
+                    <h2 className="mt-2 font-serif text-lg leading-snug line-clamp-2">
+                      {article.title}
                     </h2>
                     <p className="mt-2 text-sm text-stone-500 line-clamp-3">
-                      {post.excerpt}
+                      {article.excerpt}
                     </p>
+                    <Link
+                      href={`/blog/${article.slug}`}
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C] hover:underline"
+                    >
+                      Lire l&apos;article
+                      <ArrowRight className="size-3.5" />
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -103,27 +111,27 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="border-t border-stone-200 bg-stone-50 py-12">
-          <div className="mx-auto max-w-6xl px-4 text-center">
-            <h2 className="font-serif text-2xl">
-              Recevez nos articles par email
+        <section className="bg-stone-900 py-16 text-center">
+          <div className="mx-auto max-w-6xl px-4">
+            <h2 className="font-serif text-3xl text-white">
+              Ne manquez aucun article
             </h2>
-            <p className="mt-2 text-sm text-stone-500 max-w-md mx-auto">
-              Conseils boulangerie, nouvelles recettes et offres exclusives.
-              Pas de spam — promis.
+            <p className="mt-3 text-stone-400 max-w-md mx-auto">
+              Inscrivez-vous à notre newsletter et recevez nos recettes,
+              actualités et offres exclusives.
             </p>
             <form className="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="votre@email.com"
                 required
-                className="flex-1 rounded-full border border-stone-300 px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#C05A3C]/30 focus:border-[#C05A3C] min-h-[48px]"
+                className="flex-1 rounded-full border border-stone-700 bg-stone-800 px-5 py-3 text-white placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-[#C05A3C] min-h-[48px]"
               />
               <button
                 type="submit"
-                className="rounded-full bg-[#C05A3C] px-6 py-3 text-white text-sm font-medium hover:bg-[#A84830] transition-colors min-h-[48px]"
+                className="rounded-full bg-[#C05A3C] px-6 py-3 text-white font-medium hover:bg-[#A84830] transition-colors min-h-[48px]"
               >
-                S&apos;abonner
+                S&apos;inscrire
               </button>
             </form>
           </div>
