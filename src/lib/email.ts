@@ -34,16 +34,17 @@ export async function sendEmail({ to, subject, html, replyTo }: SendEmailOptions
 // Welcome drip email templates
 export const emailTemplates = {
   welcome: {
-    subject: "Bienvenue chez Eric Kayser Louvre-Rivoli 🥖",
+    subject: "Bienvenue chez Eric Kayser Louvre Rivoli",
+    previewText: "Pains au levain, viennoiseries signatures, retrait rapide au 4 Rue de l'Échelle.",
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
         <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
-        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Bienvenue dans notre boulangerie</h1>
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Votre prochaine pause gourmande vous attend au Louvre</h1>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          Merci de rejoindre la communauté Eric Kayser Louvre-Rivoli. Vous recevrez nos meilleures recettes, les coulisses du fournil, et des offres exclusives.
+          Bienvenue dans la communauté Eric Kayser Louvre-Rivoli. Pains au levain, viennoiseries signatures, créations pâtissières — tout est fait maison, chaque matin, au 4 Rue de l'Échelle.
         </p>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          En attendant, découvrez nos pains signature et viennoiseries pur beurre, disponibles en Click & Collect.
+          Commandez en ligne et retirez en boutique sans attente grâce au Click & Collect.
         </p>
         <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/boutique" style="display: inline-block; background: #C05A3C; color: white; padding: 14px 28px; text-decoration: none; font-weight: 600; margin-top: 16px;">
           Découvrir nos best-sellers →
@@ -56,13 +57,14 @@ export const emailTemplates = {
     `,
   },
   bestSellers: {
-    subject: "Nos 3 pains signatures que vous devez goûter",
+    subject: "Les incontournables de la maison Kayser",
+    previewText: "Nos clients reviennent d'abord pour ces essentiels : baguette, croissant, pain signature.",
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
         <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
-        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Les incontournables du fournil</h1>
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Par quoi commencer chez Eric Kayser ?</h1>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
-          Voici les 3 produits que nos clients du quartier Louvre-Rivoli commandent le plus :
+          Nos clients du quartier Louvre-Rivoli reviennent d'abord pour ces 3 essentiels :
         </p>
         <div style="margin: 24px 0; padding: 16px; background: white; border-left: 3px solid #C05A3C;">
           <strong style="color: #2C1810;">1. Baguette Tradition au Levain</strong> — 1,50 €<br/>
@@ -86,11 +88,12 @@ export const emailTemplates = {
     `,
   },
   subscription: {
-    subject: "Votre pain frais chaque semaine, sans y penser",
+    subject: "Et si votre pain vous attendait déjà chaque semaine ?",
+    previewText: "La routine la plus simple pour ne jamais manquer de bon pain artisanal.",
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 40px 24px;">
         <img src="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/logo.svg" alt="Eric Kayser" style="height: 48px; margin-bottom: 24px;" />
-        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">L'abonnement pain : la tranquillité du quotidien</h1>
+        <h1 style="font-size: 24px; color: #2C1810; margin-bottom: 16px;">Gagnez du temps avec notre abonnement pain</h1>
         <p style="font-size: 16px; color: #44403c; line-height: 1.6;">
           Imaginez : chaque matin, votre pain au levain vous attend en boutique. Plus de file d'attente, plus d'oubli. Juste le plaisir d'un pain frais garanti.
         </p>
@@ -101,7 +104,7 @@ export const emailTemplates = {
           <span style="font-size: 13px; opacity: 0.7;">soit -15% vs achat unitaire</span>
         </div>
         <a href="https://boulangerie-eric-kayser-louvre-rivo.vercel.app/boutique" style="display: inline-block; background: #C05A3C; color: white; padding: 14px 28px; text-decoration: none; font-weight: 600; margin-top: 8px;">
-          Découvrir les abonnements →
+          Découvrir l'abonnement →
         </a>
         <p style="font-size: 13px; color: #a8a29e; margin-top: 32px;">
           Eric Kayser — 4 Rue de l'Échelle, 75001 Paris<br/>
