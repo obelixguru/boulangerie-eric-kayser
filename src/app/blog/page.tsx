@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { getAllPosts, getAllCategories } from "@/lib/blog";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -18,43 +19,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-const ARTICLES = [
-  {
-    slug: "secret-levain-naturel",
-    title: "Le secret du levain naturel : pourquoi il change tout",
-    excerpt:
-      "Fermentation lente, saveurs profondes, meilleure digestibilité. Découvrez comment notre levain liquide transforme la farine en pain d'exception.",
-    date: "18 avril 2026",
-    category: "Savoir-faire",
-    image:
-      "https://images.unsplash.com/photo-1571157577110-493b325fdd3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwyfHxjcm9pc3NhbnQlMjBwYXN0cnl8ZW58MHwxfHx8MTc3Njg4OTIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
-    readTime: "5 min",
-  },
-  {
-    slug: "guide-viennoiseries-paris",
-    title: "Guide des viennoiseries : croissant, pain au chocolat et brioche",
-    excerpt:
-      "Beurre AOP, feuilletage à 27 tours, cuisson dorée. Les secrets d'une viennoiserie pur beurre réussie, expliqués par notre chef.",
-    date: "15 avril 2026",
-    category: "Recettes",
-    image:
-      "https://images.unsplash.com/photo-1773027270919-8714e0af1172?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwzfHxjcm9pc3NhbnQlMjBwYXN0cnl8ZW58MHwxfHx8MTc3Njg4OTIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
-    readTime: "4 min",
-  },
-  {
-    slug: "boulangerie-louvre-rivoli-histoire",
-    title: "Notre boulangerie au Louvre-Rivoli : 8 ans d'histoire",
-    excerpt:
-      "De l'ouverture en 2018 au lancement du Click & Collect, retour sur l'aventure Eric Kayser au cœur de Paris.",
-    date: "10 avril 2026",
-    category: "Coulisses",
-    image:
-      "https://images.unsplash.com/photo-1775326824244-b76f510665db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwYnJlYWQlMjBiYWtlcnklMjBwYXJpc3xlbnwwfDB8fHwxNzc2ODg5MjM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    readTime: "6 min",
-  },
-];
-
 export default function BlogPage() {
+  const posts = getAllPosts();
+  const categories = getAllCategories();
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -76,50 +44,81 @@ export default function BlogPage() {
           </div>
         </section>
 
+        {/* Category pills */}
+        {categories.length > 0 && (
+          <section className="border-b border-stone-200">
+            <div className="mx-auto max-w-6xl px-4 py-4 flex gap-2 overflow-x-auto scrollbar-none">
+              <span className="shrink-0 rounded-full px-4 py-2 text-sm font-medium bg-stone-900 text-white">
+                Tout
+              </span>
+              {categories.map((cat) => (
+                <span
+                  key={cat}
+                  className="shrink-0 rounded-full px-4 py-2 text-sm font-medium bg-stone-100 text-stone-700 hover:bg-stone-200 cursor-pointer transition-colors"
+                >
+                  {cat}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Articles grid */}
         <section className="py-12">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 md:grid-cols-3">
-              {ARTICLES.map((article) => (
-                <article
-                  key={article.slug}
-                  className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="relative aspect-[16/10]">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                    />
-                    <span className="absolute top-3 left-3 bg-white/90 text-stone-700 text-xs font-medium px-2.5 py-1 rounded-full">
-                      {article.category}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 text-xs text-stone-400">
-                      <time>{article.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{article.readTime} de lecture</span>
+            {posts.length === 0 ? (
+              <p className="text-center text-stone-500 py-12">
+                Aucun article pour le moment. Revenez bientôt !
+              </p>
+            ) : (
+              <div className="grid gap-8 md:grid-cols-3">
+                {posts.map((article) => (
+                  <article
+                    key={article.slug}
+                    className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="relative aspect-[16/10]">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                      />
+                      <span className="absolute top-3 left-3 bg-white/90 text-stone-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                        {article.category}
+                      </span>
                     </div>
-                    <h2 className="mt-2 font-serif text-lg leading-snug line-clamp-2">
-                      {article.title}
-                    </h2>
-                    <p className="mt-2 text-sm text-stone-500 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    <Link
-                      href={`/blog/${article.slug}`}
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C] hover:underline"
-                    >
-                      Lire l&apos;article
-                      <ArrowRight className="size-3.5" />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+                    <div className="p-5">
+                      <div className="flex items-center gap-2 text-xs text-stone-400">
+                        <time>
+                          {new Date(article.date).toLocaleDateString("fr-FR", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                          })}
+                        </time>
+                        <span aria-hidden="true">&middot;</span>
+                        <span>{article.readTime} de lecture</span>
+                      </div>
+                      <h2 className="mt-2 font-serif text-lg leading-snug line-clamp-2">
+                        {article.title}
+                      </h2>
+                      <p className="mt-2 text-sm text-stone-500 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                      <Link
+                        href={`/blog/${article.slug}`}
+                        className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#C05A3C] hover:underline"
+                      >
+                        Lire l&apos;article
+                        <ArrowRight className="size-3.5" />
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 

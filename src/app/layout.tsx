@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://boulangerie-eric-kayser-louvre-rivo.vercel.app",
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 

@@ -1,8 +1,18 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = "https://boulangerie-eric-kayser-louvre-rivo.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = getAllPosts();
+
+  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   return [
     {
       url: BASE_URL,
@@ -34,5 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    ...blogEntries,
   ];
 }
